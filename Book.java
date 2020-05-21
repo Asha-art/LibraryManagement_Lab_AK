@@ -1,8 +1,8 @@
-package librarymanagementLab;
+//package librarymanagementLab;
 
 import java.sql.Date;
 
-public class Book extends LibraryItem {
+public class Book extends LibraryItem implements Loanable, Reservable {
 
     private Date dueDate;
     private boolean checkedOut;
@@ -31,13 +31,6 @@ public class Book extends LibraryItem {
         this.checkedOut = checkedOut;
     }
 
-    // Overriding method
-    @Override
-
-    public String toString() {
-        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo() + " " + getDueDate();
-    }
-
     // if the book has been checkedout
 
     public boolean isCheckedOut(boolean checkedOut) {
@@ -46,6 +39,29 @@ public class Book extends LibraryItem {
         } else {
             return false;
         }
+    }
+
+    // Overriding method
+    @Override
+
+    public String toString() {
+        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo() + " " + getDueDate();
+    }
+
+    // interface methods Reservable and Loaneable
+    @Override
+    public int getReservableBooks() {
+        return 25;
+    }
+
+    @Override
+    public int getLoneableBooks() {
+        return 20;
+    }
+
+    @Override
+    public int getLoaneablePeriod() {
+        return 15;
     }
 
 }
