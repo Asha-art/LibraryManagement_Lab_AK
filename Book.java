@@ -5,18 +5,47 @@ import java.sql.Date;
 public class Book extends LibraryItem {
 
     private Date dueDate;
+    private boolean checkedOut;
 
-    public Book(String title, String category, int bookId, int rackNo, int numberOfPages, Date dueDate) {
-        super(title, category, bookId, rackNo, numberOfPages);
+    public Book(String title, String Author, String category, int bookId, int rackNo, int numberOfPages, Date dueDate,
+            boolean checkedOut) {
+        super(title, Author, category, bookId, rackNo, numberOfPages);
         this.dueDate = dueDate;
+        this.checkedOut = checkedOut;
     }
 
+    // Getters and Setters
     public Date getDueDate() {
         return dueDate;
     }
 
     public void setDueDate(Date date) {
         this.dueDate = date;
+    }
+
+    public boolean getCheckedOut() {
+        return checkedOut;
+    }
+
+    public void setCheckedOut(boolean checkedOut) {
+        this.checkedOut = checkedOut;
+    }
+
+    // Overriding method
+    @Override
+
+    public String toString() {
+        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo() + " " + getDueDate();
+    }
+
+    // if the book has been checkedout
+
+    public boolean isCheckedOut(boolean checkedOut) {
+        if (checkedOut) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
