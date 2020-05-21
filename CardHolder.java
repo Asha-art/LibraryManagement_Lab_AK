@@ -1,8 +1,8 @@
 package librarymanagementLab;
 
 public class CardHolder {
-    private String memberName, memberAddress, dateOfMembership;
-    private int memberId, overDue;
+    private String memberName, memberAddress, dateOfMembership, booksCheckedOut, overDueBooks;
+    private int memberId, lateFee;
 
     public String getMemberName() {
         return memberName;
@@ -28,6 +28,22 @@ public class CardHolder {
         this.dateOfMembership = dateOfMembership;
     }
 
+    public String getBooksCheckedOut() {
+        return booksCheckedOut;
+    }
+
+    public void setBooksCheckedOut(String booksCheckedOut) {
+        this.booksCheckedOut = booksCheckedOut;
+    }
+
+    public String getOverDueBooks() {
+        return overDueBooks;
+    }
+
+    public void setOverDueBooks(String overDueBooks) {
+        this.overDueBooks = overDueBooks;
+    }
+
     public int getMemberId() {
         return memberId;
     }
@@ -36,12 +52,12 @@ public class CardHolder {
         this.memberId = memberId;
     }
 
-    public int getOverDue() {
-        return overDue;
+    public int getLateFee() {
+        return lateFee;
     }
 
-    public void setOverDue(int overDue) {
-        this.overDue = overDue;
+    public void setLateFee(int lateFee) {
+        this.lateFee = lateFee;
     }
 
 }
