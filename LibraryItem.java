@@ -1,28 +1,24 @@
 package librarymanagementLab;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryItem {
     public String libraryName = "CMS library";
     public String libraryAddress = "Charlotte";
-    private String title, category;
-    // private String author, publisher;
+    private String title, Author, category;
     private int bookId, rackNo, numberOfPages;
 
-    List<String> books = new ArrayList<String>();
-
-    LibraryItem library = new LibraryItem("Java", "Non-Fiction", 12, 150, 200);
-
-    public LibraryItem(String title, String category, int bookId, int rackNo, int numberOfPages) {
+    public LibraryItem(String title, String Author, String category, int bookId, int rackNo, int numberOfPages) {
         this.title = title;
         this.category = category;
         this.bookId = bookId;
         this.rackNo = rackNo;
         this.numberOfPages = numberOfPages;
-        System.out.println(" Welcome to " + libraryName + libraryAddress);
+        System.out.println(" Welcome to " + libraryName + ", " + libraryAddress);
 
     }
+
+    // Getters and Setters
 
     public String getTitle() {
         return title;
@@ -30,6 +26,14 @@ public class LibraryItem {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getAuthor() {
+        return Author;
+    }
+
+    public void setAuthor(String author) {
+        Author = author;
     }
 
     public String getCategory() {
@@ -64,17 +68,9 @@ public class LibraryItem {
         this.numberOfPages = numberOfPages;
     }
 
-    // display books
-    private static void printBookDetails(List<LibraryItem> books) {
-        for (LibraryItem b : books) {
-            System.out.println("Books in the library:" + b.getBookId() + " " + b.getTitle() + " " + b.getCategory()
-                    + " " + b.getRackNo());
-        }
-    }
-
+    // toString method to display books details
     public String toString() {
-
-        return library.getBookId() + " " + library.getTitle() + " " + library.getCategory() + " " + library.getRackNo();
+        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo();
     }
 
 }
