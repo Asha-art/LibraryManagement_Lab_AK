@@ -1,4 +1,7 @@
-package librarymanagementLab;
+import java.util.ArrayList;
+import java.util.List;
+
+//package librarymanagementLab;
 
 public class CardHolder {
     private String memberName, memberAddress, dateOfMembership, booksCheckedOut, overDueBooks;
@@ -60,4 +63,9 @@ public class CardHolder {
         this.lateFee = lateFee;
     }
 
+    // List<Books> list1 = new ArrayList<>();
+
+    // List<Periodicals> list2 = new ArrayList<>();
+
+    // List<Multimedia> books = new ArrayList<>();
 }
