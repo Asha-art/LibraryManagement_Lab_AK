@@ -1,6 +1,6 @@
-package librarymanagementLab;
+//package librarymanagementLab;
 
-import java.util.List;
+//import java.util.List;
 
 public class LibraryItem {
     public String libraryName = "CMS library";
@@ -8,13 +8,18 @@ public class LibraryItem {
     private String title, Author, category;
     private int bookId, rackNo, numberOfPages;
 
-    public LibraryItem(String title, String Author, String category, int bookId, int rackNo, int numberOfPages) {
+    // relationship
+    private Author authorname;
+
+    public LibraryItem(String title, String Author, String category, int bookId, int rackNo, int numberOfPages,
+            Author authorname) {
         this.title = title;
         this.category = category;
         this.bookId = bookId;
         this.rackNo = rackNo;
         this.numberOfPages = numberOfPages;
-        System.out.println(" Welcome to " + libraryName + ", " + libraryAddress);
+        this.authorname = authorname;
+        // System.out.println(" Welcome to " + libraryName + ", " + libraryAddress);
 
     }
 
@@ -71,6 +76,14 @@ public class LibraryItem {
     // toString method to display books details
     public String toString() {
         return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo();
+    }
+
+    public Author getAuthorname() {
+        return authorname;
+    }
+
+    public void setAuthorname(Author authorname) {
+        this.authorname = authorname;
     }
 
 }
