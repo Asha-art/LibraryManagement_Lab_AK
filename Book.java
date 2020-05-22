@@ -1,27 +1,18 @@
 //package librarymanagementLab;
 
-import java.sql.Date;
-
 public class Book extends LibraryItem implements Loanable, Reservable {
 
-    private Date dueDate;
+    // private Date dueDate;
     private boolean checkedOut;
 
-    public Book(String title, String Author, String category, int bookId, int rackNo, int numberOfPages, Date dueDate,
-            boolean checkedOut) {
-        super(title, Author, category, bookId, rackNo, numberOfPages);
-        this.dueDate = dueDate;
+    public Book(String title, String Author, String category, int bookId, int rackNo, int numberOfPages,
+            boolean checkedOut, Author authorname) {
+        super(title, Author, category, bookId, rackNo, numberOfPages, authorname);
+
         this.checkedOut = checkedOut;
     }
 
     // Getters and Setters
-    public Date getDueDate() {
-        return dueDate;
-    }
-
-    public void setDueDate(Date date) {
-        this.dueDate = date;
-    }
 
     public boolean getCheckedOut() {
         return checkedOut;
@@ -33,19 +24,21 @@ public class Book extends LibraryItem implements Loanable, Reservable {
 
     // if the book has been checkedout
 
-    public boolean isCheckedOut(boolean checkedOut) {
-        if (checkedOut) {
+    public boolean isCheckedOut() {
+        if (getCheckedOut()) {
             return true;
         } else {
+
             return false;
         }
+
     }
 
     // Overriding method
     @Override
 
     public String toString() {
-        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo() + " " + getDueDate();
+        return getBookId() + " " + getTitle() + " " + getCategory() + " " + getRackNo();
     }
 
     // interface methods Reservable and Loaneable
@@ -55,13 +48,23 @@ public class Book extends LibraryItem implements Loanable, Reservable {
     }
 
     @Override
-    public int getLoneableBooks() {
-        return 20;
+    public boolean isLoanable() {
+        return true;
+    }
+
+    @Override
+    public int getLoanablePeriod() {
+        return 15;
+    }
+
+    public void lateCharge(int lateCharge) {
+        System.out.println("Daily late charge is  " + lateCharge + "cents");
     }
 
     @Override
     public int getLoaneablePeriod() {
-        return 15;
+        // TODO Auto-generated method stub
+        return 0;
     }
 
 }
