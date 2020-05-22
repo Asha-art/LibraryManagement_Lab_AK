@@ -1,12 +1,12 @@
-package librarymanagementLab;
+//package librarymanagementLab;
 
 public class Magazine extends Periodical {
 
     String weekly, monthly;
 
     public Magazine(String title, String Author, String category, int bookId, int rackNo, int numberOfPages,
-            String weekly, String monthly) {
-        super(title, Author, category, bookId, rackNo, numberOfPages);
+            String weekly, String monthly, Author authorname) {
+        super(title, Author, category, bookId, rackNo, numberOfPages, authorname);
         this.weekly = weekly;
         this.monthly = monthly;
 

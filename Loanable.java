@@ -1,5 +1,8 @@
 interface Loanable {
-    public abstract int getLoneableBooks();
 
-    int getLoaneablePeriod();
+    boolean isLoanable();
+
+    int getLoanablePeriod();
+
+    public void lateCharge(int lateCharge);
 }
